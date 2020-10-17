@@ -14,6 +14,14 @@
 <link rel="stylesheet" href="{{asset('public/vendors/selectFX/css/cs-skin-elastic.css')}}">
 <link rel="stylesheet" href="{{asset('public/vendors/jqvmap/dist/jqvmap.min.css')}}">
 
+<link rel="stylesheet" href="{{asset('public/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/font-awesome/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/themify-icons/css/themify-icons.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/selectFX/css/cs-skin-elastic.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
+
 
 <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
 
