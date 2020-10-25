@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\kategori;
-
+use App\Kategori;
 
 class KategoriController extends Controller
 {
@@ -17,9 +16,9 @@ class KategoriController extends Controller
     public function index()
     {
         //
-        $pagename = 'data kategori';
-        $data=kategori::all();
-        return view('admin.kategori.index',compact ('data','pagename'));
+        $pagename = 'Data Kategori';
+        $data = kategori::all();
+        return view('admin.kategori.index', compact('data','pagename'));
     }
 
     /**
@@ -30,6 +29,8 @@ class KategoriController extends Controller
     public function create()
     {
         //
+        $pagename = 'Form Input Kategori';
+        return view('admin.kategori.create', compact('pagename'));
     }
 
     /**
@@ -41,6 +42,21 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'txt_namakategori'=> 'required',
+            'txt_ketkategori'=> 'required',
+            'radio_status'=> 'required',
+        ]);
+
+        $data_kategori = new kategori([
+
+            'nama_kategori'=>$request->get('txt_namakategori'),
+            'keterangan_kategori'=>$request->get('txt_ketkategori'),
+            'status_kategori'=>$request->get('radio_status'),
+        ]);
+
+        $data_kategori->save();
+        return redirect('admin/kategori')->with('sukses','Kategori Berhasil Ditambahkan');
     }
 
     /**
@@ -63,6 +79,9 @@ class KategoriController extends Controller
     public function edit($id)
     {
         //
+        $pagename = 'Edit Kategori';
+        $data = kategori::find($id);
+        return view('admin.kategori.edit', compact('data','pagename'));
     }
 
     /**
@@ -75,6 +94,21 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'txt_namakategori'=> 'required',
+            'txt_ketkategori'=> 'required',
+            'radio_status'=> 'required',
+        ]);
+
+        $tugas = kategori::find($id);
+
+        $tugas->nama_kategori = $request->get('txt_namakategori');
+        $tugas->keterangan_kategori = $request->get('txt_ketkategori');
+        $tugas->status_kategori= $request->get('radio_status');
+    
+
+         $tugas->save();
+        return redirect('admin/kategori')->with('sukses','Tugas Berhasil Dirubah');
     }
 
     /**
@@ -86,5 +120,8 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
+        $tugas=kategori::find($id);
+        $tugas->delete();
+        return redirect('admin/kategori')->with('sukses','Kategori Berhasil Dihapus');
     }
 }
