@@ -64,13 +64,7 @@
                                     <div class="col-12 col-md-9"><input type="text" id="text-input" name="txt_namakategori" placeholder="Text" value="{{$data->nama_kategori}}" class="form-control"><small class="form-text text-muted">Isikan dengan nama kategori</small></div>
                                 </div>
                                
-                               
-
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Keterangan Kategori</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="txt_ketkategori" placeholder="Text" value="{{$data->keterangan_kategori}}" class="form-control"><small class="form-text text-muted">Penjelasan Mengenai Kategori yang disematkan</small></div>
-                                </div>
-                                 
+                            
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label class=" form-control-label">Status Kategori</label></div>
                                         <div class="col col-md-9">
